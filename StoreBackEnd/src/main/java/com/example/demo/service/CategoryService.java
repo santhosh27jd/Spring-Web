@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.CategoryDao;
@@ -15,7 +16,7 @@ public class CategoryService {
 	
 	private final CategoryDao dao;
 	@Autowired
-	public CategoryService(CategoryDao dao) {
+	public CategoryService(@Qualifier("postgres") CategoryDao dao) {
 		// TODO Auto-generated constructor stub
 		this.dao = dao;
 	}

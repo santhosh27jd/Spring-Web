@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.dao.CategoryDao;
 import com.example.demo.model.Category;
 
-@Repository
-public class CategoryDataAccessService implements CategoryDao{
+@Repository("MemoryCache")
+public class MemCategoryDataAccessService implements CategoryDao{
 	
 	
 	List<Category> categoryList = new ArrayList<Category>();
