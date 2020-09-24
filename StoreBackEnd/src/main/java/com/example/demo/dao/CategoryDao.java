@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import com.example.demo.model.Category;
@@ -15,4 +16,11 @@ public interface CategoryDao {
 	}
 
 	public List<Category> selectAll();
+	
+	Optional<Category> selectCategoryById(UUID id);
+	
+	int deleteCategoryById(UUID id);
+	
+	int updateCategoryById(UUID id,Category category);
+	
 }

@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,4 +28,15 @@ public class CategoryService {
 		return dao.selectAll();
 	}
 	
+	public Optional<Category> getCategoryByID(UUID id){
+		return dao.selectCategoryById(id);
+	}
+	
+	public int deleteCategoryById(UUID id) {
+		return dao.deleteCategoryById(id);
+	}
+	
+	public int updateCategoryById(UUID id, Category category) {
+		return dao.updateCategoryById(id, category);
+	}
 }
